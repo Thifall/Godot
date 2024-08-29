@@ -1,0 +1,15 @@
+res://Scenes/Game/game_scene.tscn
+res://Scenes/Plane/plane.gd
+res://Scenes/Plane/plane.tscn
+res://Scenes/Barrier/barrier.tscn
+res://Scenes/Pipe/pipe.tscn
+res://Scenes/Laser/laser.tscn
+res://Scenes/Pipes/pipes.tscn
+res://Scenes/Pipes/pipes.gd
+res://Scenes/Game/game_scene.gd
+res://Singletons/Game_manager.gd
+res://Singletons/ScoreManager.gd
+res://Scenes/HUD/hud.tscn
+res://assets/SJ_48_score_orange.tres
+res://Scenes/HUD/hud.gd
+res://Singletons/SignalManager.gd

@@ -1,0 +1,14 @@
+CanvasLayer
+MarginContainer
+Label
+Marker2D
+Timer
+Node
+VisibleOnScreenNotifier2D
+AnimationPlayer
+CollisionShape2D
+Sprite2D
+Area2D
+StaticBody2D
+AnimatedSprite2D
+CharacterBody2D
