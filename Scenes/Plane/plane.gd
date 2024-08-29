@@ -4,6 +4,7 @@ const GRAVITY: float = 1500.0
 const POWER: float = -500.0
 @onready var plane_sprite: AnimatedSprite2D = $PlaneSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var engine_sound: AudioStreamPlayer2D = $EngineSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,7 @@ func fly() -> void:
 		animation_player.play("power")
 
 func die() -> void:
+	engine_sound.stop()
 	plane_sprite.stop()
 	set_physics_process(false)
 	SignalManager.onPlaneDied.emit()

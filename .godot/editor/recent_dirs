@@ -1,5 +1,7 @@
-res://Singletons
+res://Scenes/GameOver
 res://assets
+res://Scenes/Main
+res://Singletons
 res://assets/fonts
 res://Scenes/HUD
 res://Scenes/Pipes
