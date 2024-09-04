@@ -28,6 +28,8 @@ _data = {
 }
 
 [node name="Laser" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
 
 [node name="LaserSprite" type="Sprite2D" parent="."]
 position = Vector2(-1, 1)

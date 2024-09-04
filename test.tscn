@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1lsfe0ydeenc"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_g7lob"]
+[ext_resource type="Texture2D" uid="uid://ck6hr2wt7thoo" path="res://assets/pipes/pipe.png" id="1_uyj3k"]
+[ext_resource type="Texture2D" uid="uid://bo0ndldq0xdw6" path="res://assets/background/sky.png" id="3_a08my"]
+[ext_resource type="Texture2D" uid="uid://dwg4mosoee4wj" path="res://assets/background/clouds_2.png" id="4_ywlp3"]
+[ext_resource type="Texture2D" uid="uid://fpa3q40uwqib" path="res://assets/background/rocks_1.png" id="5_va007"]
+[ext_resource type="Texture2D" uid="uid://b8qwdca5pkdcb" path="res://assets/background/rocks_2.png" id="6_ltvwu"]
+
+[node name="test" type="Node2D"]
+script = ExtResource("1_g7lob")
+
+[node name="Pipe" type="Sprite2D" parent="."]
+position = Vector2(84, 410)
+texture = ExtResource("1_uyj3k")
+
+[node name="Pipe2" type="Sprite2D" parent="."]
+position = Vector2(532, 424)
+rotation = 0.148353
+texture = ExtResource("1_uyj3k")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(249, 429)
+texture = ExtResource("3_a08my")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(249, 429)
+texture = ExtResource("4_ywlp3")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(249, 429)
+texture = ExtResource("5_va007")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(249, 429)
+texture = ExtResource("6_ltvwu")

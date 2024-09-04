@@ -76,6 +76,7 @@ _data = {
 }
 
 [node name="Plane" type="CharacterBody2D" groups=["player"]]
+collision_layer = 8
 script = ExtResource("1_t57jn")
 
 [node name="PlaneSprite" type="AnimatedSprite2D" parent="."]
@@ -83,7 +84,12 @@ scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_48tqo")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.591264
+
+[node name="PlaneSprite2" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_48tqo")
+animation = &"fly"
+autoplay = "fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)

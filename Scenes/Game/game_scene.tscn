@@ -1,18 +1,48 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8i4581wgbmii"]
+[gd_scene load_steps=12 format=3 uid="uid://c8i4581wgbmii"]
 
 [ext_resource type="Texture2D" uid="uid://b8qwdca5pkdcb" path="res://assets/background/rocks_2.png" id="1_dgnea"]
 [ext_resource type="Script" path="res://Scenes/Game/game_scene.gd" id="1_qq84q"]
 [ext_resource type="PackedScene" uid="uid://d3gsnwvg48rsm" path="res://Scenes/Plane/plane.tscn" id="2_0wicc"]
+[ext_resource type="PackedScene" uid="uid://dab8d3r2k5hix" path="res://Scenes/ParalaxImage/paralax_image.tscn" id="3_70uy1"]
 [ext_resource type="PackedScene" uid="uid://70mtksfp34dp" path="res://Scenes/Barrier/barrier.tscn" id="3_huelg"]
 [ext_resource type="PackedScene" uid="uid://dlr0m5a15tjw1" path="res://Scenes/Pipes/pipes.tscn" id="4_hu6ux"]
+[ext_resource type="Texture2D" uid="uid://bo0ndldq0xdw6" path="res://assets/background/sky.png" id="4_kuxyi"]
+[ext_resource type="Texture2D" uid="uid://dwg4mosoee4wj" path="res://assets/background/clouds_2.png" id="5_wm6ab"]
 [ext_resource type="PackedScene" uid="uid://o3miurcii1jj" path="res://Scenes/HUD/hud.tscn" id="6_02wm1"]
+[ext_resource type="Texture2D" uid="uid://fpa3q40uwqib" path="res://assets/background/rocks_1.png" id="6_d63qr"]
 [ext_resource type="PackedScene" uid="uid://0sbuwiiuhdml" path="res://Scenes/GameOver/game_over.tscn" id="7_csvhn"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_qq84q")
 pipes_scene = ExtResource("4_hu6ux")
 
+[node name="ParallaxBG" type="Node2D" parent="."]
+position = Vector2(0, 427)
+
+[node name="ParalaxImage" parent="ParallaxBG" instance=ExtResource("3_70uy1")]
+scroll_scale = Vector2(0, 0)
+texture = ExtResource("4_kuxyi")
+
+[node name="ParalaxImage2" parent="ParallaxBG" instance=ExtResource("3_70uy1")]
+scroll_scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_wm6ab")
+
+[node name="ParalaxImage3" parent="ParallaxBG" instance=ExtResource("3_70uy1")]
+scroll_scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_d63qr")
+
+[node name="ParalaxImage4" parent="ParallaxBG" instance=ExtResource("3_70uy1")]
+scroll_scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_dgnea")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("6_02wm1")]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("7_csvhn")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(299, 477)
 texture = ExtResource("1_dgnea")
 
@@ -36,11 +66,5 @@ position = Vector2(530, 340)
 
 [node name="SpawnLower" type="Marker2D" parent="."]
 position = Vector2(530, 540)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("6_02wm1")]
-
-[node name="GameOver" parent="CanvasLayer" instance=ExtResource("7_csvhn")]
 
 [connection signal="timeout" from="PipeSpawnTimer" to="." method="_on_pipe_spawn_timer_timeout"]
